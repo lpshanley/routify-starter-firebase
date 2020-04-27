@@ -4,7 +4,16 @@ Starter template for [Routify](https://github.com/sveltech/routify)
 
 ### Get started
 
-To use this starter run `npx degit lpshanley/routify-starter-firebase routify-starter`.
+To use this starter run 
+```bash
+npx degit lpshanley/routify-starter-firebase routify-starter
+cd routify-starter
+npm i
+cd functions
+npm i
+cd ..
+```
+
 
 Alternatively, you can clone this repo.
 
