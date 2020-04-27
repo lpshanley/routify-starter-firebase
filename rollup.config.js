@@ -13,8 +13,6 @@ const buildDir = `${staticDir}/build`
 const production = !process.env.ROLLUP_WATCH;
 const bundling = process.env.BUNDLING || production ? 'dynamic' : 'bundle'
 
-const livereloadPort = 35729
-
 /**
  * Reviewing later, at the moment Prerendering Breaks SSR
  */
@@ -98,10 +96,7 @@ const bundledConfig = {
   },
   plugins: [
     !production && serve(),
-    !production && livereload({ 
-      watch: 'static', 
-      clientUrl: `//localhost:${livereloadPort}/livereload.js?snipver=1`
-    })
+    !production && livereload(staticDir)
   ]
 }
 
@@ -116,10 +111,7 @@ const dynamicConfig = {
     dir: `${distDir}/build`
   },
   plugins: [
-    !production && livereload({ 
-      watch: 'static', 
-      clientUrl: `//localhost:${livereloadPort}/livereload.js?snipver=1`
-    })
+    !production && livereload(staticDir)
   ]
 }
 

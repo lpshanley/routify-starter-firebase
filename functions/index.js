@@ -9,7 +9,7 @@ const script = fs.readFileSync(require.resolve('./dist/bundle.js'), 'utf8')
 const template = fs.readFileSync(require.resolve('./dist/__app.html'), 'utf8')
 
 svelteApp.get('*', async (req, res) => {
-    const html = await ssr(template, script, req.url)
+    const html = await ssr(template, script, req.url, { host: 'http://localhost' })
     res.send(html + '\n<!-- ssr rendered -->')
 })
 
