@@ -7,7 +7,6 @@ import copy from 'rollup-plugin-copy'
 import del from 'del'
 
 const staticDir = 'static'
-
 const distDir = 'functions/dist'
 const buildDir = `${staticDir}/build`
 

@@ -1,10 +1,10 @@
-# routify-starter
+# routify-starter-firebase
 
 Starter template for [Routify](https://github.com/sveltech/routify)
 
 ### Get started
 
-To use this starter run `npx @sveltech/routify init` in an empty folder.
+To use this starter run `npx degit lpshanley/routify-starter-firebase routify-starter`.
 
 Alternatively, you can clone this repo.
 
@@ -14,15 +14,15 @@ Alternatively, you can clone this repo.
 |------------------|-----------------------------------------------------------------------------------|
 | `dev`            | Development (port 5000)                                                           |
 | `dev-dynamic`    | Development with dynamic imports                                                  |
-| `build`          | Build a bundled app with SSR + prerendering and dynamic imports                   |
-| `serve`          | Run after a build to preview. Serves SPA on 5000 and SSR on 5005                  |
-| `deploy:*`       | Deploy to netlify or now                                                          |
+| `build`          | Build a bundled app with SSR + ~~pre-rendering~~* and dynamic imports              |
+| `serve`          | Run after a build to preview. Serves SSR on 5000                                  |
+| `deploy:firebase`| Deploy to firebase                                                                |
 
-### SSR and pre-rendering
+### SSR and ~~pre-rendering~~*
 
-SSR and pre-rendering are included in the default build process.
+SSR and ~~pre-rendering~~* are included in the default build process.
 
-`npm run deploy:(now|netlify)` will deploy the app with SSR and prerendering included.
+`npm run deploy:firebase` will deploy the app with SSR and ~~pre-rendering~~* included.
 
 To render async data, call the `$ready()` helper whenever your data is ready.
 
@@ -34,10 +34,13 @@ See [src/pages/example/api/[showId].svelte](https://github.com/sveltech/routify-
 
 ### Production
 
-* For SPA or SSR apps please make sure that url rewrite is enabled on the server.
-* For SPA redirect to `__dynamic.html`.
-* For SSR redirect to the lambda function or express server.
+* Make sure you have `firebase-tools` installed and are logged in.
+* Add your project-id in the .firebaserc file.
+* Run `npm run deploy:firebase`
+
+### Notes
+\* At the moment use of prerendering prevents use of SSR. I am working on a possible solution for conditional prerendering.
 
 ### Issues?
 
-File on Github! See https://github.com/sveltech/routify/issues .
+File on Github! See https://github.com/lpshanley/routify-starter-firebase/issues.
