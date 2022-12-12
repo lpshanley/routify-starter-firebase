@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@sveltech/ssr": "0.0.9",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "firebase-admin": "^8.12.1",
     "firebase-functions": "^3.7.0"
   },
